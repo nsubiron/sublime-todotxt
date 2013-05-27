@@ -77,6 +77,21 @@
 				<key>match</key>
 				<string>(?&lt;=^|\s)(\+)\S+</string>
 			</dict>
+			<!-- Hashtag (#Hashtag) -->
+			<dict>
+				<key>captures</key>
+				<dict>
+					<key>2</key>
+					<dict>
+						<key>name</key>
+						<string>punctuation.definition.hashtag.todotxt</string>
+					</dict>
+				</dict>
+				<key>name</key>
+				<string>string.quoted.double.json</string>
+				<key>match</key>
+				<string>(?&lt;=^|\s)(#)\S+</string>
+			</dict>
 			<!-- Add-on (key:value) -->
 			<dict>
 				<key>captures</key>
