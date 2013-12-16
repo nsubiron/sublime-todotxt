@@ -3,7 +3,7 @@
 <plist version="1.0">
 	<dict>
 		<key>name</key>
-		<string>Todo.txt</string>
+		<string>Todo.txt++</string>
 		<key>scopeName</key>
 		<string>text.todotxt</string>
 		<key>fileTypes</key>
@@ -47,51 +47,66 @@
 				<key>match</key>
 				<string>^\([D-Z]\)(?&lt;! )</string>
 			</dict>
-			<!-- Context (@value) -->
-			<dict>
-				<key>captures</key>
-				<dict>
-					<key>2</key>
-					<dict>
-						<key>name</key>
-						<string>punctuation.definition.context.todotxt</string>
-					</dict>
-				</dict>
-				<key>name</key>
-				<string>keyword.context.todotxt</string>
-				<key>match</key>
-				<string>(?&lt;=^|\s)(@)\S*</string>
-			</dict>
-			<!-- Project (+value) -->
-			<dict>
-				<key>captures</key>
-				<dict>
-					<key>2</key>
-					<dict>
-						<key>name</key>
-						<string>punctuation.definition.project.todotxt</string>
-					</dict>
-				</dict>
-				<key>name</key>
-				<string>keyword.other.project.todotxt</string>
-				<key>match</key>
-				<string>(?&lt;=^|\s)(\+)\S+</string>
-			</dict>
-			<!-- Hashtag (#Hashtag) -->
-			<dict>
-				<key>captures</key>
-				<dict>
-					<key>2</key>
-					<dict>
-						<key>name</key>
-						<string>punctuation.definition.hashtag.todotxt</string>
-					</dict>
-				</dict>
-				<key>name</key>
-				<string>string.quoted.double.json</string>
-				<key>match</key>
-				<string>(?&lt;=^|\s)(#)\S+</string>
-			</dict>
+      <!-- Enum (Enum title:) -->
+      <dict>
+        <key>captures</key>
+        <dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.definition.enum.todotxt</string>
+          </dict>
+        </dict>
+        <key>name</key>
+        <string>constant.language.enum.todotxt</string>
+        <key>match</key>
+        <string>^[^ ].*[:]</string>
+      </dict>
+      <!-- Context (@value) -->
+      <dict>
+        <key>captures</key>
+        <dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.definition.context.todotxt</string>
+          </dict>
+        </dict>
+        <key>name</key>
+        <string>keyword.context.todotxt</string>
+        <key>match</key>
+        <string>(?&lt;=^|\s)(@)\S*</string>
+      </dict>
+      <!-- Project (+value) -->
+      <dict>
+        <key>captures</key>
+        <dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.definition.project.todotxt</string>
+          </dict>
+        </dict>
+        <key>name</key>
+        <string>keyword.other.project.todotxt</string>
+        <key>match</key>
+        <string>(?&lt;=^|\s)(\+)\S+</string>
+      </dict>
+      <!-- Hashtag (#Hashtag) -->
+      <dict>
+        <key>captures</key>
+        <dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.definition.hashtag.todotxt</string>
+          </dict>
+        </dict>
+        <key>name</key>
+        <string>string.quoted.double.json</string>
+        <key>match</key>
+        <string>(?&lt;=^|\s)(#)\S+</string>
+      </dict>
 			<!-- Add-on (key:value) -->
 			<dict>
 				<key>captures</key>
