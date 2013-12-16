@@ -1,0 +1,19 @@
+[
+  {
+    "keys": ["super+forward_slash"],
+    "command": "iterate_todo",
+    "context":
+    [
+      { "key": "selector", "operand": "text.todotxt" }
+    ]
+  },
+  {
+    "keys": ["super+alt+forward_slash"],
+    "command": "iterate_todo",
+    "args": { "reverse": true },
+    "context":
+    [
+      { "key": "selector", "operand": "text.todotxt" }
+    ]
+  }
+]

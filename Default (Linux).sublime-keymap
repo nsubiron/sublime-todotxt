@@ -1,0 +1,19 @@
+[
+  {
+    "keys": ["ctrl+/"],
+    "command": "iterate_todo",
+    "context":
+    [
+      { "key": "selector", "operand": "text.todotxt" }
+    ]
+  },
+  {
+    "keys": ["ctrl+shift+/"],
+    "command": "iterate_todo",
+    "args": { "reverse": true },
+    "context":
+    [
+      { "key": "selector", "operand": "text.todotxt" }
+    ]
+  }
+]
