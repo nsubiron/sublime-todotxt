@@ -1,0 +1,5 @@
+{
+	"shell_cmd": "egrep '\\([A-Z]\\)' $file | sort",
+	"working_dir": "$file_path",
+	"selector": "text.todotxt"
+}
