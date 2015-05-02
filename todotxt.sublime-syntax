@@ -1,0 +1,55 @@
+%YAML 1.2
+---
+name: Todo.txt++
+file_extensions:
+  - todo.txt
+scope: text.todotxt
+contexts:
+  keywords:
+    - match: (\B\@[0-9a-zA-Z_-]+)
+      scope: keyword.context.todotxt
+    - match: (\B\+[0-9a-zA-Z_-]+)
+      scope: keyword.other.project.todotxt
+    - match: (\B#[0-9a-zA-Z_-]+)
+      scope: hashtag.todotxt
+      captures:
+        1: string.quoted.double.todotxt
+
+  main:
+    - match: ^x .*$
+      scope: comment.completed.todotxt
+    - match: '^(?=[^ ].*:\s)'
+      push: section-header
+    - match: ^(\([A-Z]\))(?= )
+      scope: constant.other.priority.todotxt
+      captures:
+        1: meta.tag.todotxt
+    - include: code
+    - include: keywords
+
+  section-header:
+    - meta_scope: constant.language.section-header.todotxt
+    - meta_content_scope: entity.name.section.todotxt
+    - match: ':(?!.*:\s)'
+      scope: punctuation.separator.todotxt
+      pop: true
+    - include: keywords
+
+  code:
+    - match: '```(YAML|yaml)\b'
+      scope: comment.begin.code-block.yaml.todotxt
+      push: Packages/YAML/YAML.sublime-syntax
+      with_prototype:
+        - match: '```'
+          scope: comment.end.code-block.yaml.todotxt
+          pop: true
+    - match: '```'
+      scope: comment.begin.code-block.empty.todotxt
+      push: empty-code-block
+
+  empty-code-block:
+    - meta_content_scope: code-block.empty.todotxt
+    - match: '```'
+      scope: comment.end.code-block.empty.todotxt
+      pop: true
+

@@ -5,7 +5,7 @@
 	<key>name</key>
 	<string>Symbol List: Todo.txt++</string>
 	<key>scope</key>
-	<string>text.todotxt constant.language.enum.todotxt</string>
+	<string>entity.name.section.todotxt</string>
 	<key>settings</key>
 	<dict>
 		<key>showInSymbolList</key>
